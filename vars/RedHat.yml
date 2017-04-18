@@ -1,0 +1,23 @@
+---
+common_packages:
+  - sudo
+  - git
+  - tree
+  - rsync
+  - lvm2
+  - nmap
+  - vim-common
+  - vim-X11
+  - zsh
+  - curl
+  - wget
+  - libselinux-python
+  - man
+  - tcpdump
+  - iotop
+  - strace
+  - mlocate
+  - unzip
+  # versatile replacement for vmstat, iostat and ifstat
+  - dstat
+  - yum-utils

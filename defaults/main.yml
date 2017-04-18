@@ -1,2 +1,11 @@
 ---
 # defaults file for ansible-default-packages
+
+common_packages: []
+
+os_packages_update: false
+
+os_packages_state: present
+
+os_extra_packages: []
+os_extra_packages_state: present

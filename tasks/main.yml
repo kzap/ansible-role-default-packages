@@ -1,2 +1,28 @@
 ---
 # tasks file for ansible-default-packages
+
+- name: load OS specific variables
+  include_vars: "{{ansible_os_family}}.yml"
+
+- name: Upgrade all packages
+  package: name=* state=latest
+  when: ansible_os_family == "RedHat" and os_packages_update
+
+- name: "Set packages to install"
+  set_fact:
+    common_packages: "{{ os_packages }}"
+  when: "os_packages is defined"
+
+- name: installing default packages
+  package:
+    name: "{{ item }}"
+    state: "{{ os_packages_state | default('present') }}"
+  with_items: "{{ common_packages }}"
+  when: "common_packages|length > 0"
+
+- name: installing extra packages
+  package:
+    name: "{{ item }}"
+    state: "{{ os_extra_packages_state | default('present') }}"
+  with_items: "{{ os_extra_packages }}"
+  when: "os_extra_packages|length > 0"
