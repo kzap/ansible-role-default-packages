@@ -1,0 +1,32 @@
+---
+common_packages:
+  - tmux
+  - urlview
+  - mosh
+  - git
+  - vim-gtk3
+  - vim
+  - htop
+  - fakeroot
+  - tree
+  - gdisk
+  - rsync
+  - lvm2
+  - nmap
+  - linux-kernel-headers
+  - zsh
+  - ssh-askpass
+  - sshpass
+  - curl
+  - wget
+  - python-selinux
+  - python3
+  - python3-venv
+  - tcpdump
+  - iotop
+  - iftop
+  - strace
+  - mlocate
+  - unzip
+  # versatile replacement for vmstat, iostat and ifstat
+  - dstat
